@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiveclipse</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #9b84c7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Music Icon */
+.music-icon {
+    width: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    height: 100vh;
+    background:
+        url('https://i.ibb.co.com/Y4kqM9Vv/about-us.png') no-repeat center 40% / cover,
+        linear-gradient(135deg, #e0d4ee, #c9b6e4);
+    background-blend-mode: normal;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop autoplay>
+    <source src="lagu-kamu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-links">
+        <a>ABOUT US</a>
+        <a>MEMBER'S</a>
+        <a>MANAGER</a>
+        <a>PARTNERSHIP</a>
+    </div>
+
+    <img src="https://i.ibb.co.com/ymz1R0bS/music.png"
+         class="music-icon"
+         id="musicToggle">
+</div>
+
+<!-- BANNER -->
+<div class="banner"></div>
+
+<script>
+const music = document.getElementById("bgMusic");
+const toggle = document.getElementById("musicToggle");
+
+/* Toggle Music */
+toggle.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        toggle.style.opacity = "1";
+    } else {
+        music.pause();
+        toggle.style.opacity = "0.5";
+    }
+});
+</script>
+
+</body>
+</html>
